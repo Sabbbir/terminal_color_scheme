@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+picv=$(find ~/Pictures/wallpaper/vertical -type f -name "*.jpg" -o -name "*.png" | shuf -n1)
+
+gsettings set org.gnome.desktop.background picture-uri-dark file://$picv
+
+wal -c
+wal -i $picv
+
+

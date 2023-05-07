@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Picking a random picture from the landscape folder 
+
+picl=$(find ~/Pictures/wallpaper/landscape -type f -name "*.jpg" -o -name "*.png" | shuf -n1)
+
+
+# Set the selected picture as wallpaper.
+# As I use dark/night mode most of the time, picture-uri-dark refers to setting wallpaper on dark theme 
+
+gsettings set org.gnome.desktop.background picture-uri-dark file://$picl
+
+# Using Pywal, the color scheme from the wallpaper is selected
+# neofetch can show the color palatte
+
+wal -c
+wal -i $picl
+
+
